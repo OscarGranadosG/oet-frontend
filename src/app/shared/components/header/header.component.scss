@@ -1,0 +1,22 @@
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0f172a;
+
+}
+
+button {
+  outline: none;
+  border: 0;
+  background: transparent;
+  .mat-icon{
+    color: white;
+  }
+}
+
+::ng-deep {
+  .mat-menu-content {
+    width: 160px;
+  }
+}

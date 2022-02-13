@@ -1,0 +1,8 @@
+<mat-nav-list>
+    <h2 class="title-sidebar">MODULOS</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" *ngFor="let item of sidebarRoutes" routerLink={{item.route}}>
+      <mat-icon> {{ item.icon }}</mat-icon> {{ item.name }}
+    </a>
+  </mat-nav-list>
+  
