@@ -13,10 +13,23 @@
     </div>
     <mat-divider class="mb-4 mt-4"></mat-divider>
     <div>
-      <app-table
-        *ngIf="tbody.length > 0"
-        [theader]="theader"
-        [tbody]="tbody"
-      ></app-table>
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th>Placa</th>
+              <th>Tipo</th>
+              <th>Color</th>
+            </tr>
+          </thead>
+            <tr *ngFor="let item of list">
+              <td>{{item.license_plate}}</td>
+              <td>{{item.type}}</td>
+              <td>{{item.color}}</td>
+            </tr>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>

@@ -1,1 +1,56 @@
-<p>form-vehicle works!</p>
+<div class="col">
+    <button type="button" [routerLink]="'/vehicle'" class="btn btn-light">Regresar</button>
+  </div> 
+  
+  <mat-divider class="mb-4 mt-4"></mat-divider>
+  
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" novalidate>
+    <div class="form-group">
+    
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Placa del carro</mat-label>
+        <input matInput type="text" placeholder="Escribe la placa"  formControlName="license_plate"  id="license_plate" required>
+        <mat-error *ngIf="license_plate.invalid">{{getErrorMessageLicensePlate()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Color del carro</mat-label>
+        <input matInput type="text" placeholder="Escribe el color"  formControlName="color"  id="color">
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Tipo de carro</mat-label>
+        <mat-select formControlName="type" required>
+          <mat-option value="particular">Particular</mat-option>
+          <mat-option value="publico">Publico</mat-option>
+        </mat-select>
+        <mat-error *ngIf="type.invalid">{{getErrorMessageType()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Conductor</mat-label>
+        <mat-select formControlName="driver_id" required>
+          <mat-option value="{{item.id}}" *ngFor="let item of listDriver">{{item.first_name}} {{item.last_name}} </mat-option>
+        </mat-select>
+        <mat-error *ngIf="driver_id.invalid">{{getErrorMessageDriver()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Propietario</mat-label>
+        <mat-select formControlName="owner_id" required>
+          <mat-option value="{{item.id}}" *ngFor="let item of listOwner">{{item.first_name}} {{item.last_name}} </mat-option>
+        </mat-select>
+        <mat-error *ngIf="owner_id.invalid">{{getErrorMessageOwner()}}</mat-error>
+      </mat-form-field>
+  
+      <button 
+        class="btn btn-success my-2"
+        type="submit"
+        [disabled] = 'checkoutForm.invalid'
+      >Crear
+      </button>
+    </div>
+    
+  
+  </form>
+  

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Driver } from '../../../../../models/driver';
+import { Owner } from '../../../../../models/owner';
 import { environment } from '../../../../../../environments/environment';
 
 
@@ -9,7 +9,7 @@ import { environment } from '../../../../../../environments/environment';
     providedIn: 'root'
 })
 
-export class DriverService {
+export class OwnerService {
 
   public data: any;
 
@@ -18,10 +18,9 @@ export class DriverService {
     ) { }
 
     public getAll(): Promise<any>{
-        //return this.http.get(environment.URL_API+'driver/getAll');
         return new Promise(
           resolve => {
-            this.http.get(environment.URL_API+'driver/getAll')
+            this.http.get(environment.URL_API+'owner/getAll')
             .subscribe(
               (response) => {
                 if (response === false) { resolve(response); }
@@ -33,11 +32,10 @@ export class DriverService {
         );
     }
 
-    public save(data:Driver):Promise<any> {
-      //return this.http.post(environment.URL_API+'driver', data)
+    public save(data:Owner):Promise<any> {
       return new Promise(
         resolve => {
-          this.http.post(environment.URL_API+'driver', data)
+          this.http.post(environment.URL_API+'owner', data)
           .subscribe(
             (response) => {
               if (response === false) { resolve(response); }

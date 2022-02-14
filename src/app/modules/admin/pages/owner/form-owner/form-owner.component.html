@@ -1,1 +1,58 @@
-<p>form-owner works!</p>
+<div class="col">
+    <button type="button" [routerLink]="'/owner'" class="btn btn-light">Regresar</button>
+  </div> 
+  
+  <mat-divider class="mb-4 mt-4"></mat-divider>
+  
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" novalidate>
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Cedula</mat-label>
+        <input matInput type="number" placeholder="Escribe la cedúla"  formControlName="document"  id="document" required>
+        <mat-error *ngIf="document.invalid">{{getErrorMessageDocument()}}</mat-error>
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Primer nombre</mat-label>
+        <input matInput type="text" placeholder="Escribe primer nombre"  formControlName="first_name"  id="first_name" required>
+        <mat-error *ngIf="first_name.invalid">{{getErrorMessageFirstName()}}</mat-error>
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Segundo nombre</mat-label>
+        <input matInput type="text" placeholder="Escribe segundo nombre"  formControlName="second_name"  id="second_name">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Apellidos</mat-label>
+        <input matInput type="text" placeholder="Escribe el apellido"  formControlName="last_name"  id="last_name" required>
+        <mat-error *ngIf="last_name.invalid">{{getErrorMessageLastName()}}</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Direccion</mat-label>
+        <input matInput type="text" placeholder="Escribe la dirección"  formControlName="address"  id="address">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Telefono</mat-label>
+        <input matInput type="text" placeholder="Escribe el # telefonico"  formControlName="phone"  id="phone" required>
+        <mat-error *ngIf="phone.invalid">{{getErrorMessagePhone()}}</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="col-12 my-2">
+        <mat-label>Ciudad</mat-label>
+        <input matInput type="text" placeholder="Escribe la ciudad"  formControlName="city"  id="city">
+      </mat-form-field>
+  
+      <button 
+        class="btn btn-success my-2"
+        type="submit"
+        [disabled] = 'checkoutForm.invalid'
+      >Crear
+      </button>
+    </div>
+    
+  
+  </form>
+  

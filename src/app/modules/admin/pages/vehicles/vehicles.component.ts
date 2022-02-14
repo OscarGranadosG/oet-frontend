@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Vehicle } from '../../../../models/vehicle';
+import { VehicleService } from './services/vehicle.service';
 
 @Component({
   selector: 'app-vehicles',
@@ -8,30 +10,22 @@ import { Component, OnInit } from '@angular/core';
 export class VehiclesComponent implements OnInit {
 
   public theader = ['id', 'name', 'lastname', 'asdasd']
-  public tbody = [
-    {
-      id:0,
-      name:'asdasd',
-      lastname:'asdasd',
-      meme:'asdasd',
-    },
-    {
-      id:0,
-      name:'asdasd',
-      lastname:'asdasd',
-      meme:'asdasd',
-    },
-    {
-      id:0,
-      name:'asdasd',
-      lastname:'asdasd',
-      meme:'asdasd',
-    },
-  ]
+  public tbody = []
 
-  constructor() { }
+  public list: Vehicle[] = [];
+
+
+  constructor(
+    private myService: VehicleService
+  ) { }
 
   ngOnInit(): void {
+    const self = this;
+    self.myService.getAll().then( (data:any) => {
+      if (data !== null) {
+        this.list = this.myService.data.data
+      }
+    });
   }
 
 }
