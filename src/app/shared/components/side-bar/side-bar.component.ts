@@ -14,10 +14,10 @@ export class SideBarComponent implements OnInit {
   ngOnInit(): void {
     this.sidebarRoutes = [
       {route: 'home', icon: 'home', name: 'HOME'},
-      {route: 'vehicle', icon: 'directions_car', name: 'VEHICULO'},
-      {route: 'driver', icon: 'person_pin', name: 'CONDUCTOR'},
-      {route: 'owner', icon: 'person', name: 'PROPIETARIO'},
-
+      {route: 'vehicle', icon: 'directions_car', name: 'VEHÍCULOS'},
+      {route: 'driver', icon: 'person_pin', name: 'CONDUCTORES'},
+      {route: 'owner', icon: 'person', name: 'PROPIETARIOS'},
+      {route: 'report', icon: 'library_books', name: 'INFORME'},
     ]
   }
 

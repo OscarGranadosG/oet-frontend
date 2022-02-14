@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row d-flex justify-content-between">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Reporte</li>
+          </ol>
+        </nav>
+      </div> 
+    </div>
+    <mat-divider class="mb-4 mt-4"></mat-divider>
+    <div>
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th>Placa</th>
+              <th>Tipo</th>
+              <th>Nombre propietario</th>
+              <th>Documento propietario</th>
+              <th>Nombre conductor</th>
+              <th>Documento conductor</th>
+            </tr>
+          </thead>
+            <tr *ngFor="let item of list">
+              <td>{{item.license_plate}}</td>
+              <td>{{item.type}}</td>
+              <td>{{item.ownerName}}{{item.ownerLastName}}</td>
+              <td>{{item.ownerDocument}}</td>
+              <td>{{item.driverName}}{{item.driverLastName}}</td>
+              <td>{{item.driverDocument}}</td>
+
+            </tr>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

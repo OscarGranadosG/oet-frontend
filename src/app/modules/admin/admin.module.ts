@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from "@angular/common/http";
 import { MatSelectModule } from '@angular/material/select';
+import { ReportComponent } from './pages/report/report.component';
 
 
 
@@ -34,7 +35,7 @@ import { MatSelectModule } from '@angular/material/select';
     DriverComponent, 
     HomeComponent, 
     OwnerComponent, 
-    VehiclesComponent, FormDriverComponent, FormOwnerComponent, FormVehicleComponent],
+    VehiclesComponent, FormDriverComponent, FormOwnerComponent, FormVehicleComponent, ReportComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
