@@ -23,6 +23,7 @@ import { FormVehicleComponent } from './pages/vehicles/form-vehicle/form-vehicle
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from "@angular/common/http";
 
 
 
@@ -47,6 +48,7 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     RouterModule,
+    HttpClientModule
   ]
 })
 export class AdminModule { }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DriverService } from '../services/driver.service';
 
 
 @Component({
@@ -11,7 +13,8 @@ export class FormDriverComponent implements OnInit {
 
   document = new FormControl('', [Validators.required]);
   first_name = new FormControl('', [Validators.required]);
-  last_name = new FormControl('');
+  second_name = new FormControl('');
+  last_name = new FormControl('', [Validators.required]);
   address = new FormControl('');
   phone = new FormControl('', [Validators.required]);
   city = new FormControl('');
@@ -21,14 +24,17 @@ export class FormDriverComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private myService: DriverService,
+    public router: Router,
   ) {
     this.checkoutForm = this.formBuilder.group({
       document: [ '', Validators.required ],
       first_name: [ '', Validators.required ],
-      last_name: [ '' ],
-      address: new FormControl(''),
-      phone: new FormControl('', [Validators.required]),
-      city: new FormControl(''),
+      second_name: [''],
+      last_name: [ '', Validators.required ],
+      address: [''],
+      phone: [ '', Validators.required ],
+      city: [''],
     });
    }
 
@@ -36,10 +42,18 @@ export class FormDriverComponent implements OnInit {
   }
 
   onSubmit(data: any) {
-    // Process checkout data here
+    this.myService.save(data).then(
+      (data: any) => {
+        if (data === true) {
+          this.checkoutForm.reset();
+          this.close();
+        }
+      }
+    )
+  }
 
-    //this.checkoutForm.reset();
-    console.log(data)
+  public close = () => {
+    this.router.navigateByUrl('/driver');
   }
 
   getErrorMessageDocument = () => {
@@ -65,6 +79,16 @@ export class FormDriverComponent implements OnInit {
       return ''
     }
   }
+
+  getErrorMessageLastName = () => {
+    if (this.last_name.hasError('required')) {
+      return 'Escribe el apellido';
+    } else {
+      return ''
+    }
+  }
+
+  
 
   
 
