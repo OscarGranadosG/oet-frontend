@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL_API: 'http://localhost:8000/api/'
+  URL_API: 'https://oet-backend.herokuapp.com/api/'
 };
 
 /*
