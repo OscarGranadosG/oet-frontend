@@ -1,27 +1,11 @@
-# OetFrontend
+## PAKING 4 RUEDAS 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+1. Clonar el repositorio usando el comando: git clone https://github.com/OscarGranadosG/oet-frontend.git
 
-## Development server
+2. Ingresar al proyecto con el comando: cd oet-frontend
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. Instalar las dependencias del proyecto con el comando: npm install
 
-## Code scaffolding
+4. Correr de manera local usando el comando ng serve -o
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. Verificar que en nuestro proyecto backend tengamos el mismo valor en la variable de entorno: URL_API que esta en  //src/environments/environment.ts
