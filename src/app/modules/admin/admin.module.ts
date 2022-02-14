@@ -17,6 +17,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminLayoutRoutes } from './admin.routing';
+import { FormDriverComponent } from './pages/driver/form-driver/form-driver.component';
+import { FormOwnerComponent } from './pages/owner/form-owner/form-owner.component';
+import { FormVehicleComponent } from './pages/vehicles/form-vehicle/form-vehicle.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 
@@ -25,9 +32,10 @@ import { AdminLayoutRoutes } from './admin.routing';
     DriverComponent, 
     HomeComponent, 
     OwnerComponent, 
-    VehiclesComponent],
+    VehiclesComponent, FormDriverComponent, FormOwnerComponent, FormVehicleComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(AdminLayoutRoutes),
     SharedModule,
     MatSidenavModule,
@@ -36,6 +44,8 @@ import { AdminLayoutRoutes } from './admin.routing';
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule,
   ]
 })

@@ -1,1 +1,22 @@
-<p>owner works!</p>
+<div class="container">
+  <div class="row d-flex justify-content-between">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Propietario</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col d-flex justify-content-end ">
+      <button type="button" [routerLink]="'create'" class="btn btn-primary">Crear propietario</button>
+    </div>  
+  </div>
+  <mat-divider class="mb-4 mt-4"></mat-divider>
+  <div>
+    <app-table
+      *ngIf="tbody.length > 0"
+      [theader]="theader"
+      [tbody]="tbody"
+    ></app-table>
+  </div>
+</div>

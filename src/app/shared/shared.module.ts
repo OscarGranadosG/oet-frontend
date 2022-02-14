@@ -11,13 +11,15 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { TableComponent } from './components/table/table.component';
 
 
 
 @NgModule({
   declarations: [
     SideBarComponent,
-    HeaderComponent
+    HeaderComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   exports: [
     SideBarComponent,
-    HeaderComponent
+    HeaderComponent,
+    TableComponent
   ]
 })
 export class SharedModule { }
